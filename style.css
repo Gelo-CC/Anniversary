@@ -87,10 +87,12 @@ button {
 .poster {
     display: none;
     transform: rotateY(180deg) translateY(50px);
-    perspective: 1000px;
+    perspective: 780px;
     animation: fadeIn 1.5s forwards ease-in-out;
     position: relative;
     overflow: hidden;
+    max-width: 900px;
+    width: 90%;
 }
 
 /* Poster content with glass/mirror effect */
@@ -104,6 +106,9 @@ button {
     z-index: 1;
     backdrop-filter: blur(5px); /* Less blur for better text readability */
     opacity: 0.95; /* Slightly increased opacity for more clarity */
+    perspective: 780px;
+    max-width: 900px;
+    width: 90%;
 }
 
 /* Text inside the poster */
