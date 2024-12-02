@@ -1,0 +1,254 @@
+/* Body & Container */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #2E3B4E, #4F5D75); /* Deep midnight blue with a subtle gradient */
+    perspective: 1500px; /* Enhanced 3D effect */
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    position: relative;
+    max-width: 900px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.25); /* Softer transparent background */
+    backdrop-filter: blur(12px); /* Less intense frosted glass effect */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); /* Strong shadow for depth */
+    color: #fff; /* Light text on dark background */
+}
+
+/* Title */
+.title {
+    font-size: 4rem;
+    color: #D6A77A; /* Soft gold for elegance */
+    font-weight: 900;
+    text-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4); /* Glowing text shadow */
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    transform: rotateX(15deg);
+    animation: float 3s infinite ease-in-out;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+
+/* Button Styles */
+button {
+    padding: 18px 40px;
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+}
+
+/* Yes Button */
+.yes {
+    background: linear-gradient(45deg, #FF9100, #FF5C00); /* Gold to warm orange gradient */
+}
+
+.yes:hover {
+    transform: scale(1.2) rotate3d(1, 1, 0, 15deg);
+    box-shadow: 0 12px 35px rgba(255, 91, 0, 0.7);
+    background: linear-gradient(45deg, #FF5C00, #FF9100);
+}
+
+/* No Button */
+.no {
+    background: linear-gradient(45deg, #4B9D8E, #2E8B57); /* Elegant deep green */
+    position: relative;
+    transition: all 0.4s ease-in-out;
+}
+
+.no:hover {
+    transform: scale(1.2) rotate3d(1, 1, 0, 15deg);
+    box-shadow: 0 12px 35px rgba(46, 139, 87, 0.7);
+    background: linear-gradient(45deg, #2E8B57, #4B9D8E);
+}
+
+/* Poster */
+.poster {
+    display: none;
+    transform: rotateY(180deg) translateY(50px);
+    perspective: 1000px;
+    animation: fadeIn 1.5s forwards ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Poster content with glass/mirror effect */
+.poster-content {
+    padding: 50px;
+    background: linear-gradient(135deg, rgba(104, 103, 103, 0.9), rgba(255, 255, 255, 0.6)); /* Subtle white gradient for softer effect */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    transform: rotateY(-10deg);
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px); /* Less blur for better text readability */
+    opacity: 0.95; /* Slightly increased opacity for more clarity */
+}
+
+/* Text inside the poster */
+.poster-content h2 {
+    color: #333; /* Darker text for better contrast */
+    font-size: 3rem; /* Adjusted size for more balanced readability */
+    font-weight: 700;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Subtle light text shadow */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.poster-content p {
+    color: #5b5b5b; /* Light color for contrast */
+    font-size: 1.5rem; /* Larger font size for better readability */
+    font-weight: 600; /* Bold for better emphasis */
+    margin-top: 20px;
+    letter-spacing: 1px;
+    text-align: center; /* Center the content */
+    text-shadow: 2px 2px 5px rgb(255, 255, 255); /* Soft shadow for better contrast */
+    line-height: 1.5;
+}
+
+.poster-content p .Date,
+.poster-content p .Time {
+    font-size: 1.8rem; /* Slightly larger for date and time */
+    font-weight: 700; /* Bold for emphasis */
+    margin-bottom: 10px;
+}
+
+/* Shine/light passing effect with 3D */
+.poster-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%; /* Extend shine across full width */
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* Light shine effect */
+    animation: lightShine 3s linear infinite; /* Light passing animation */
+    transform: skewX(-10deg) rotateX(30deg); /* Strong 3D effect */
+    pointer-events: none;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.8); /* Soft glowing light */
+    filter: blur(5px); /* Increased blur for a softer light effect */
+    z-index: -1;
+}
+
+/* Shine animation */
+@keyframes lightShine {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+/* Show Contact Button */
+.show-contact-btn {
+    background: #FF9100;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.show-contact-btn:hover {
+    background: #FF5C00;
+    transform: scale(1.1);
+}
+
+/* Contact info section */
+.contact-info {
+    text-align: center;
+    background: rgba(38, 37, 37, 0.85);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: none;
+}
+
+/* Style for the Facebook link */
+.contact-info .facebook-link {
+    color: white; /* White color for the link */
+    font-size: 1.5rem;
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    margin-top: 15px;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Change color on hover */
+.contact-info .facebook-link:hover {
+    color: #0d80b5; /* Add a slight blue tint when hovering */
+}
+
+
+/* Back to Poster Button */
+.back-to-poster-btn {
+    background: #4B9D8E;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-poster-btn:hover {
+    background: #2E8B57;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: rotateY(180deg) translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg) translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
