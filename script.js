@@ -22,8 +22,8 @@ function moveNoButton() {
     noButton.style.transition = 'transform 0.3s ease-in-out';  // Ensure smooth transformation
     noButton.style.transform = `scale(1.1) rotate3d(1, 1, 0, 15deg)`;
     
-     // Reset transformation after animation
-     setTimeout(() => {
+    // Reset transformation after animation
+    setTimeout(() => {
         noButton.style.transform = `scale(1)`; // Reset scaling after animation
     }, 300);  // Slightly adjusted duration for reset after transformation
 
@@ -34,9 +34,9 @@ function moveNoButton() {
         yesButton.style.transform = 'scale(1)'; // Reset size after animation
     }, 300);
 }
+
 // Function to show the contact information when 'Show Contact' is clicked
 function showContact() {
-   
     // Show the contact info section
     document.querySelector('.contact-info').style.display = 'block';
 }
@@ -48,9 +48,10 @@ function backToPoster() {
     // Show the poster content
     document.querySelector('.poster-content').style.display = 'block';
 }
+
 // Show Poster on "Yes" Button Click
 function showPoster() {
-    buttons.style.display = "none";
-    poster.style.display = "block";
-    document.querySelector('.poster').style.display = 'block';
+    buttons.style.display = "none"; // Hide the buttons
+    poster.style.display = "flex";  // Display the poster with flex to center content properly
+    document.querySelector('.poster').style.display = 'flex';
 }
